@@ -1,0 +1,53 @@
+﻿@model IEnumerable<MVC.Models.PhongModel>
+
+@{
+    ViewData["Title"] = "Index";
+}
+
+<h1>Index</h1>
+
+<p>
+    <a asp-action="Create">Create New</a>
+</p>
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.tenPhong)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.sucChua)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.loaiPhong)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.sanh)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.tenPhong)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.sucChua)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.loaiPhong)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.sanh.maSanh)
+            </td>
+            <td>
+                <a asp-action="Edit" asp-route-id="@item.maPhong">Edit</a> |
+                <a asp-action="Details" asp-route-id="@item.maPhong">Details</a> |
+                <a asp-action="Delete" asp-route-id="@item.maPhong">Delete</a>
+            </td>
+        </tr>
+}
+    </tbody>
+</table>

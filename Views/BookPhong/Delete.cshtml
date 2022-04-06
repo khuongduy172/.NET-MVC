@@ -1,0 +1,40 @@
+﻿@model MVC.Models.BookPhongModel
+
+@{
+    ViewData["Title"] = "Delete";
+}
+
+<h1>Delete</h1>
+
+<h3>Are you sure you want to delete this?</h3>
+<div>
+    <h4>BookPhongModel</h4>
+    <hr />
+    <dl class="row">
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.slNuoc)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.slNuoc)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.Phong)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.Phong.maPhong)
+        </dd class>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.Tiec)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.Tiec.maTiec)
+        </dd class>
+    </dl>
+    
+    <form asp-action="Delete">
+        <input type="hidden" asp-for="maTiec" />
+        <input type="hidden" asp-for="maPhong" />
+        <input type="submit" value="Delete" class="btn btn-danger" /> |
+        <a asp-action="Index">Back to List</a>
+    </form>
+</div>

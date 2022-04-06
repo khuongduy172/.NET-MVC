@@ -1,0 +1,47 @@
+﻿@model IEnumerable<MVC.Models.KhachHangModel>
+
+@{
+    ViewData["Title"] = "Index";
+}
+
+<h1>Index</h1>
+
+<p>
+    <a asp-action="Create">Create New</a>
+</p>
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.tenKh)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.ngaySinh)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.diaChi)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.tenKh)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.ngaySinh)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.diaChi)
+            </td>
+            <td>
+                <a asp-action="Edit" asp-route-id="@item.maKh">Edit</a> |
+                <a asp-action="Details" asp-route-id="@item.maKh">Details</a> |
+                <a asp-action="Delete" asp-route-id="@item.maKh">Delete</a>
+            </td>
+        </tr>
+}
+    </tbody>
+</table>

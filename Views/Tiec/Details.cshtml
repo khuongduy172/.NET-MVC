@@ -1,0 +1,36 @@
+﻿@model MVC.Models.TiecModel
+
+@{
+    ViewData["Title"] = "Details";
+}
+
+<h1>Details</h1>
+
+<div>
+    <h4>TiecModel</h4>
+    <hr />
+    <dl class="row">
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.tenTiec)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.tenTiec)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.ngayDat)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.ngayDat)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.KhachHang)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.KhachHang.maKh)
+        </dd>
+    </dl>
+</div>
+<div>
+    <a asp-action="Edit" asp-route-id="@Model.maTiec">Edit</a> |
+    <a asp-action="Index">Back to List</a>
+</div>

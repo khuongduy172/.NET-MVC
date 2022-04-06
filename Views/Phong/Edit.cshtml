@@ -1,0 +1,49 @@
+﻿@model MVC.Models.PhongModel
+
+@{
+    ViewData["Title"] = "Edit";
+}
+
+<h1>Edit</h1>
+
+<h4>PhongModel</h4>
+<hr />
+<div class="row">
+    <div class="col-md-4">
+        <form asp-action="Edit">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <input type="hidden" asp-for="maPhong" />
+            <div class="form-group">
+                <label asp-for="tenPhong" class="control-label"></label>
+                <input asp-for="tenPhong" class="form-control" />
+                <span asp-validation-for="tenPhong" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="sucChua" class="control-label"></label>
+                <input asp-for="sucChua" class="form-control" />
+                <span asp-validation-for="sucChua" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="loaiPhong" class="control-label"></label>
+                <input asp-for="loaiPhong" class="form-control" />
+                <span asp-validation-for="loaiPhong" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="maSanh" class="control-label"></label>
+                <select asp-for="maSanh" class="form-control" asp-items="ViewBag.maSanh"></select>
+                <span asp-validation-for="maSanh" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <input type="submit" value="Save" class="btn btn-primary" />
+            </div>
+        </form>
+    </div>
+</div>
+
+<div>
+    <a asp-action="Index">Back to List</a>
+</div>
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}

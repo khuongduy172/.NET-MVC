@@ -1,0 +1,47 @@
+﻿@model MVC.Models.TiecModel
+
+@{
+    ViewData["Title"] = "Create";
+}
+
+<h1>Create</h1>
+
+<h4>TiecModel</h4>
+<hr />
+<div class="row">
+    <div class="col-md-4">
+        <form asp-action="Create">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <div class="form-group">
+                <label asp-for="maTiec" class="control-label"></label>
+                <input asp-for="maTiec" class="form-control" />
+                <span asp-validation-for="maTiec" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="tenTiec" class="control-label"></label>
+                <input asp-for="tenTiec" class="form-control" />
+                <span asp-validation-for="tenTiec" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="ngayDat" class="control-label"></label>
+                <input asp-for="ngayDat" class="form-control" />
+                <span asp-validation-for="ngayDat" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="maKhachHang" class="control-label"></label>
+                <select asp-for="maKhachHang" class ="form-control" asp-items="ViewBag.maKhachHang"></select>
+            </div>
+            <div class="form-group">
+                <input type="submit" value="Create" class="btn btn-primary" />
+            </div>
+        </form>
+    </div>
+</div>
+
+<div>
+    <a asp-action="Index">Back to List</a>
+</div>
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}
